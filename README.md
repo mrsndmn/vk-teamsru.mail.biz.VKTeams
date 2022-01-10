@@ -1,4 +1,4 @@
 
-flatpack template for VK Teams (MyTeam)
+flatpak template for VK Teams (MyTeam)
 
 https://biz.mail.ru/myteam/
