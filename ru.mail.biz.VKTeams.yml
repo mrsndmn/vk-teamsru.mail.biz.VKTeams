@@ -1,0 +1,32 @@
+app-id: ru.mail.biz.VKTeams
+runtime: org.freedesktop.Platform
+runtime-version: '21.08'
+sdk: org.freedesktop.Sdk
+command: /app/myteam
+finish-args:
+  - --share=network
+  - --device=dri
+  - --socket=x11
+  - --socket=wayland
+  - --socket=pulseaudio
+  - --filesystem=xdg-run/pipewire-0
+  - --filesystem=xdg-download
+  - --filesystem=xdg-pictures
+  - --filesystem=xdg-documents
+  - --filesystem=~/.myteam:rw
+  - --filesystem=~/.config/Mail.Ru/:rw
+modules:
+  - name: myteam
+    buildsystem: simple
+    build-commands:
+      - tar -xf myteam.tar.xz -C /app
+      - chmod 755 /app/myteam
+      - install -Dm644 -t /app/share/applications ru.mail.biz.VKTeams.desktop
+      - install -Dm644 -t /app/share/icons/hicolor/scalable/apps ru.mail.biz.VKTeams.png
+    sources:
+      - type: file
+        path: myteam.tar.xz
+      - type: file
+        path: ru.mail.biz.VKTeams.desktop
+      - type: file
+        path: ru.mail.biz.VKTeams.png

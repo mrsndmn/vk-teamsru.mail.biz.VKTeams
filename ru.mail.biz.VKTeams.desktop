@@ -1,0 +1,10 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=VKTeams
+GenericName=MyTeam VK Teams messanger
+Comment=MyTeam VK Teams messanger
+TryExec=/app/myteam
+Exec=/app/myteam %F
+Icon=ru.mail.biz.VKTeams
+Terminal=false
+Type=Application
